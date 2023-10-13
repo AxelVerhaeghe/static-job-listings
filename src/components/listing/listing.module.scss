@@ -1,0 +1,108 @@
+@import '../../app/variables';
+
+.Card {
+  padding: 2.5rem 1rem 1rem 1rem;
+  background-color: white;
+  border-radius: 0.5rem;
+  box-shadow: 0px 1rem 1rem -10px rgba($color-primary, 0.4);
+  position: relative;
+  @media (min-width: $breakPoint) {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 3rem;
+    padding: 1rem;
+  }
+
+  img {
+    @media (max-width: $breakPoint) {
+      --size: 50px;
+      position: absolute;
+      top: calc(-0.5 * var(--size));
+      width: var(--size);
+      height: var(--size);
+    }
+  }
+}
+
+.Content {
+  display: flex;
+  gap: 2rem;
+}
+
+.Company {
+  color: $color-primary;
+  font-size: 0.9rem;
+}
+
+.Heading {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  font-weight: bold;
+}
+
+.Pills {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  font-size: 0.65rem;
+
+  span {
+    background-color: var(--color-pill);
+    color: white;
+    border-radius: 1rem;
+    padding: 0.25rem 0.75rem;
+  }
+
+  .New {
+    --color-pill: #{$color-primary};
+  }
+
+  .Featured {
+    --color-pill: #{$color-primary-dark};
+  }
+}
+
+.Position {
+  color: $color-primary-dark;
+  font-size: 1rem;
+  margin: 0.5rem 0;
+}
+
+.Metadata {
+  display: flex;
+  gap: 2rem;
+  color: $color-text;
+  font-size: 0.75rem;
+
+  li:not(:last-child) {
+    position: relative;
+    &:after {
+      --size: 3px;
+      content: '';
+      position: absolute;
+      height: var(--size);
+      width: var(--size);
+      border-radius: 50%;
+      top: calc(50% - var(--size) / 2);
+      right: -1rem;
+      background-color: $color-text;
+    }
+  }
+
+  @media (max-width: $breakPoint) {
+    padding-bottom: 1rem;
+  }
+}
+
+.Tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+
+  @media (max-width: $breakPoint) {
+    padding-top: 1rem;
+    border-top: 1px solid rgba($color-text, 0.5);
+  }
+}

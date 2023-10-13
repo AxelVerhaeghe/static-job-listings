@@ -1,5 +1,6 @@
-import './globals.css';
+import './globals.scss';
 import type { Metadata } from 'next';
+import styles from './layout.module.scss';
 
 export const metadata: Metadata = {
   title: 'Static Job listing',
@@ -13,7 +14,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang='en'>
-      <body>{children}</body>
+      <body>
+        <div className={styles.Header}></div>
+        <main className={styles.Content}>{children}</main>
+      </body>
     </html>
   );
 }

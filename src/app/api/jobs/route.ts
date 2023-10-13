@@ -152,7 +152,7 @@ const data = [
 ];
 
 export async function GET() {
-  return Response.json({ data });
+  return Response.json(data);
 }
 
 export type JobListings = typeof data;
